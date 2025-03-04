@@ -43,6 +43,6 @@ jobs:
       - name: Build and analyze
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"githubproject" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.verbose=true ` /d:sonar.log.level=DEBUG `/d:sonar.scanner.forceFullAnalysis=true `/d:sonar.qualitygate.wait=true
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"githubproject" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.verbose=true ` /d:sonar.log.level=DEBUG 
           dotnet build eShopOnWeb.sln --configuration Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
